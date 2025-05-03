@@ -1,6 +1,7 @@
 
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const ForNurses = () => {
   const benefits = [
@@ -43,11 +44,13 @@ const ForNurses = () => {
           <div className="order-1 md:order-2">
             <div className="relative">
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-healthcare-200 rounded-full blur-xl opacity-60"></div>
-              <img
-                src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Nurse at work"
-                className="w-full h-auto rounded-2xl shadow-lg"
-              />
+              <AspectRatio ratio={4/3} className="overflow-hidden rounded-2xl shadow-lg">
+                <img
+                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  alt="Nurse at work"
+                  className="w-full h-full object-cover"
+                />
+              </AspectRatio>
             </div>
           </div>
         </div>
