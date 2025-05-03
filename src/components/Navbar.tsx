@@ -1,81 +1,138 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const NavItem = ({ href, text }: { href: string; text: string }) => (
+    <motion.a
+      href={href}
+      className="relative group text-gray-700 hover:text-locum-600 transition-colors duration-300"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={() => setIsOpen(false)}
+    >
+      {text}
+      <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-locum-600 group-hover:w-full transition-all duration-300"></span>
+    </motion.a>
+  );
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-200">
-      <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-6">
-        <div className="flex items-center">
-          <a href="#" className="text-2xl font-bold text-locum-700">
-            Locum<span className="text-healthcare-600">Nurse</span>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-md py-3"
+          : "bg-white/90 backdrop-blur-sm py-4"
+      }`}
+    >
+      <div className="container mx-auto flex justify-between items-center px-4 md:px-6">
+        <motion.div 
+          className="flex items-center"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <a href="#" className="text-2xl font-bold">
+            <span className="text-locum-600">Locum</span>
+            <span className="text-healthcare-600">Nurse</span>
+            <span className="ml-1 inline-block h-2 w-2 rounded-full bg-healthcare-500"></span>
           </a>
-        </div>
+        </motion.div>
 
         {/* Desktop menu */}
         <div className="hidden md:flex space-x-8 items-center">
-          <a href="#how-it-works" className="text-gray-700 hover:text-locum-600 transition-colors">
-            How It Works
-          </a>
-          <a href="#for-nurses" className="text-gray-700 hover:text-locum-600 transition-colors">
-            For Nurses
-          </a>
-          <a href="#for-facilities" className="text-gray-700 hover:text-locum-600 transition-colors">
-            For Facilities
-          </a>
-          <a href="#testimonials" className="text-gray-700 hover:text-locum-600 transition-colors">
-            Testimonials
-          </a>
-          <Button variant="outline" className="mr-2">
-            Log in
-          </Button>
-          <Button className="bg-locum-600 hover:bg-locum-700">
-            Sign up
-          </Button>
+          <NavItem href="#how-it-works" text="How It Works" />
+          <NavItem href="#for-nurses" text="For Nurses" />
+          <NavItem href="#for-facilities" text="For Facilities" />
+          <div className="relative group">
+            <button className="flex items-center text-gray-700 hover:text-locum-600 transition-colors">
+              Testimonials
+              <ChevronDown size={16} className="ml-1 group-hover:rotate-180 transition-transform duration-300" />
+            </button>
+            <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+              <a href="#testimonials" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-locum-600 rounded-t-lg">
+                Client Stories
+              </a>
+              <a href="#testimonials" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-locum-600 rounded-b-lg">
+                Nurse Experiences
+              </a>
+            </div>
+          </div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+            <Button variant="outline" className="border-locum-500 text-locum-600 hover:bg-locum-50">
+              Log in
+            </Button>
+          </motion.div>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+            <Button className="bg-gradient-to-r from-locum-600 to-healthcare-600 hover:from-locum-700 hover:to-healthcare-700 text-white shadow-md hover:shadow-lg transition-all duration-300">
+              Sign up
+            </Button>
+          </motion.div>
         </div>
 
         {/* Mobile menu button */}
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-gray-700">
+          <motion.button 
+            onClick={toggleMenu} 
+            className="text-gray-700 p-2 rounded-md hover:bg-gray-100"
+            whileTap={{ scale: 0.9 }}
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          </motion.button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-b border-gray-200 animate-fade-in">
-          <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <a href="#how-it-works" className="text-gray-700 hover:text-locum-600 py-2 transition-colors" onClick={toggleMenu}>
-              How It Works
-            </a>
-            <a href="#for-nurses" className="text-gray-700 hover:text-locum-600 py-2 transition-colors" onClick={toggleMenu}>
-              For Nurses
-            </a>
-            <a href="#for-facilities" className="text-gray-700 hover:text-locum-600 py-2 transition-colors" onClick={toggleMenu}>
-              For Facilities
-            </a>
-            <a href="#testimonials" className="text-gray-700 hover:text-locum-600 py-2 transition-colors" onClick={toggleMenu}>
-              Testimonials
-            </a>
-            <div className="flex flex-col space-y-3 pt-3">
-              <Button variant="outline" className="w-full">
-                Log in
-              </Button>
-              <Button className="w-full bg-locum-600 hover:bg-locum-700">
-                Sign up
-              </Button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            className="md:hidden bg-white border-b border-gray-200"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
+              <NavItem href="#how-it-works" text="How It Works" />
+              <NavItem href="#for-nurses" text="For Nurses" />
+              <NavItem href="#for-facilities" text="For Facilities" />
+              <NavItem href="#testimonials" text="Testimonials" />
+              <div className="flex flex-col space-y-3 pt-3">
+                <Button variant="outline" className="w-full border-locum-500 text-locum-600 hover:bg-locum-50">
+                  Log in
+                </Button>
+                <Button className="w-full bg-gradient-to-r from-locum-600 to-healthcare-600 hover:from-locum-700 hover:to-healthcare-700">
+                  Sign up
+                </Button>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
