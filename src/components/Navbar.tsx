@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
@@ -83,13 +83,12 @@ const Navbar = () => {
             </div>
           </div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-            <Button variant="outline" className="border-locum-500 text-locum-600 hover:bg-locum-50">
-              Log in
-            </Button>
-          </motion.div>
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-            <Button className="bg-gradient-to-r from-locum-600 to-healthcare-600 hover:from-locum-700 hover:to-healthcare-700 text-white shadow-md hover:shadow-lg transition-all duration-300">
-              Sign up
+            <Button 
+              className="bg-gradient-to-r from-locum-600 to-healthcare-600 hover:from-locum-700 hover:to-healthcare-700 text-white shadow-md hover:shadow-lg transition-all duration-300"
+              onClick={() => window.open("#download", "_self")}
+            >
+              <Download size={18} className="mr-2" />
+              Download App
             </Button>
           </motion.div>
         </div>
@@ -121,12 +120,13 @@ const Navbar = () => {
               <NavItem href="#for-nurses" text="For Nurses" />
               <NavItem href="#for-facilities" text="For Facilities" />
               <NavItem href="#testimonials" text="Testimonials" />
-              <div className="flex flex-col space-y-3 pt-3">
-                <Button variant="outline" className="w-full border-locum-500 text-locum-600 hover:bg-locum-50">
-                  Log in
-                </Button>
-                <Button className="w-full bg-gradient-to-r from-locum-600 to-healthcare-600 hover:from-locum-700 hover:to-healthcare-700">
-                  Sign up
+              <div className="pt-3">
+                <Button 
+                  className="w-full bg-gradient-to-r from-locum-600 to-healthcare-600 hover:from-locum-700 hover:to-healthcare-700 flex items-center justify-center"
+                  onClick={() => window.open("#download", "_self")}
+                >
+                  <Download size={18} className="mr-2" />
+                  Download App
                 </Button>
               </div>
             </div>
