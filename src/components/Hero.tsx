@@ -20,7 +20,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              The <span className="gradient-text">Marketplace</span> Where Nurses Find Their Perfect Assignment
+              The <span className="bg-[#27AE60] text-white">Marketplace</span> Where Nurses Find Their Perfect Assignment
             </motion.h1>
             <motion.p 
               className="text-lg md:text-xl text-gray-700 max-w-xl"
@@ -76,7 +76,7 @@ const Hero = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="https://img.freepik.com/free-photo/portrait-african-american-practitioner-nurse-smiling-camera-working-illness-expertise_482257-31387.jpg?semt=ais_hybrid&w=740"
                   alt="Black nurse providing healthcare services"
                   className="w-full h-auto object-cover rounded-2xl hover:scale-[1.03] transition-transform duration-700"
                 />

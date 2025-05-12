@@ -46,7 +46,7 @@ const ForNurses = () => {
               <div className="absolute -top-6 -right-6 w-24 h-24 bg-healthcare-200 rounded-full blur-xl opacity-60"></div>
               <AspectRatio ratio={4/3} className="overflow-hidden rounded-2xl shadow-lg">
                 <img
-                  src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="https://t4.ftcdn.net/jpg/00/50/86/81/360_F_50868185_wO1eZAEVo3YBFRikV8gkAgiErXezT7JF.jpg"
                   alt="Nurse at work"
                   className="w-full h-full object-cover"
                 />

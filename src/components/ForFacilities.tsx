@@ -22,7 +22,7 @@ const ForFacilities = () => {
             <div className="relative">
               <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-locum-200 rounded-full blur-xl opacity-60"></div>
               <img
-                src="https://images.unsplash.com/photo-1504439468489-c8920d796a29?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://images.adsttc.com/media/images/6813/ec6a/4ea2/d940/6947/ad9d/newsletter/paisagens-habitadas-21-centros-culturais-e-comunitarios-em-areas-rurais_24.jpg?1746136188"
                 alt="Healthcare facility"
                 className="w-full h-auto rounded-2xl shadow-lg"
               />

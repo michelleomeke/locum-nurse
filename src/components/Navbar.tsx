@@ -84,7 +84,7 @@ const Navbar = () => {
           </div>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
             <Button 
-              className="bg-gradient-to-r from-locum-600 to-healthcare-600 hover:from-locum-700 hover:to-healthcare-700 text-white shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-[#2F80ED] text-white shadow-md hover:shadow-lg transition-all duration-300"
               onClick={() => window.open("#download", "_self")}
             >
               <Download size={18} className="mr-2" />
