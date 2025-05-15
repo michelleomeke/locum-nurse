@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import HeroNurse from "@/assets/group-nurse.png" ;
 
 const Hero = () => {
   return (
@@ -16,11 +17,12 @@ const Hero = () => {
           >
             <motion.h1 
               className="font-bold leading-tight"
+
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              The <span className="bg-[#27AE60] text-white">Marketplace</span> Where Nurses Find Their Perfect Assignment
+              The Marketplace Where Nurses Find Their Perfect  <br /> and Secure Assignments
             </motion.h1>
             <motion.p 
               className="text-lg md:text-xl text-gray-700 max-w-xl"
@@ -43,7 +45,7 @@ const Hero = () => {
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="outline" className="border-locum-600 text-locum-600 hover:bg-locum-50 btn-hover-effect px-8 py-6 text-lg">
+                <Button variant="outline" className=" bg-orange-600 text-white hover:bg-locum-50 btn-hover-effect px-8 py-6 text-lg">
                   I'm a Facility
                 </Button>
               </motion.div>
@@ -76,7 +78,7 @@ const Hero = () => {
                 transition={{ duration: 0.3 }}
               >
                 <img
-                  src="https://img.freepik.com/free-photo/portrait-african-american-practitioner-nurse-smiling-camera-working-illness-expertise_482257-31387.jpg?semt=ais_hybrid&w=740"
+                  src={HeroNurse}
                   alt="Black nurse providing healthcare services"
                   className="w-full h-auto object-cover rounded-2xl hover:scale-[1.03] transition-transform duration-700"
                 />

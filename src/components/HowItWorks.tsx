@@ -1,5 +1,6 @@
 
 import { Button } from "@/components/ui/button";
+import HeroNurse from "../assets/how-it-works-nurse.png";
 
 const HowItWorks = () => {
   return (
@@ -17,9 +18,9 @@ const HowItWorks = () => {
             <div className="relative">
               <div className="absolute -top-6 -left-6 w-24 h-24 bg-locum-200 rounded-full blur-xl opacity-60"></div>
               <img
-                src="https://media.istockphoto.com/id/1308844951/photo/nurse-practitioner-doctor-with-tablet-and-stethoscope-smiling.jpg?s=612x612&w=0&k=20&c=mGIcubew63Ltivg0vI8-1nqV-7iUgT-o8NN4J3Qo3Hw="
+                src={HeroNurse}
                 alt="Nurse using laptop"
-                className="w-full h-auto rounded-2xl shadow-lg"
+                className="w-full h-[550px] rounded-2xl shadow-lg"
               />
             </div>
           </div>

@@ -7,12 +7,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+
 const testimonials = [
   {
     quote: "LocumNurse has transformed how I find shifts. I've increased my income by 30% while maintaining control over my schedule. The platform is intuitive and the team is incredibly responsive.",
     name: "Sarah Johnson, RN",
     role: "ICU Nurse",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
+    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
+
   },
   {
     quote: "As a nursing director, finding qualified staff quickly used to be a constant challenge. LocumNurse has streamlined our staffing process and connected us with high-quality nurses who fit our culture.",
@@ -79,8 +81,8 @@ const Testimonials = () => {
             ))}
           </CarouselContent>
           <div className="flex justify-center mt-8">
-            <CarouselPrevious className="relative static mr-2" />
-            <CarouselNext className="relative static ml-2" />
+            <CarouselPrevious className="relative mr-2" />
+            <CarouselNext className="relative  ml-2" />
           </div>
         </Carousel>
       </div>
