@@ -20,7 +20,7 @@ const HowItWorks = () => {
               <img
                 src={HeroNurse}
                 alt="Nurse using laptop"
-                className="w-full h-[550px] rounded-2xl shadow-lg"
+                className="w-[500px] h-[500px] rounded-2xl shadow-lg"
               />
             </div>
           </div>

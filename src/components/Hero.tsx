@@ -22,7 +22,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              The Marketplace Where Nurses Find Their Perfect  <br /> and Secure Assignments
+              The Marketplace Where Nurses Find Their Perfect Assignments
             </motion.h1>
             <motion.p 
               className="text-lg md:text-xl text-gray-700 max-w-xl"
@@ -33,7 +33,7 @@ const Hero = () => {
               Connect with top healthcare facilities nationwide. Find high-paying shifts, flexible schedules, and take control of your nursing career.
             </motion.p>
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 pt-4"
+              className="flex flex-row sm:flex-row gap-4 pt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
