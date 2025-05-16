@@ -31,7 +31,7 @@ const CTA = () => {
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10 btn-hover-effect w-full sm:w-auto px-8 py-6 text-lg font-semibold rounded-xl">
+              <Button variant="outline" className="border-2 border-white text-locum-600 hover:bg-white/10 btn-hover-effect w-full sm:w-auto px-8 py-6 text-lg font-semibold rounded-xl">
                 Register Your Facility
               </Button>
             </motion.div>

@@ -1,4 +1,3 @@
-
 import {
   Carousel,
   CarouselContent,
@@ -7,33 +6,40 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
+import Testimonial1 from "@/assets/testimonial1.png";
+import Testimonial2 from "@/assets/testimonial2.png";
+import Testimonial3 from "@/assets/testimonial3.png";
+import Testimonial4 from "@/assets/testimonial4.png";
 
 const testimonials = [
   {
-    quote: "LocumNurse has transformed how I find shifts. I've increased my income by 30% while maintaining control over my schedule. The platform is intuitive and the team is incredibly responsive.",
-    name: "Sarah Johnson, RN",
+    quote:
+      "LocumNurse has transformed how I find shifts. I've increased my income by 30% while maintaining control over my schedule. The platform is intuitive and the team is incredibly responsive.",
+    name: "Adaobi Okereke, RN",
     role: "ICU Nurse",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
-
+    image: Testimonial1,
   },
   {
-    quote: "As a nursing director, finding qualified staff quickly used to be a constant challenge. LocumNurse has streamlined our staffing process and connected us with high-quality nurses who fit our culture.",
-    name: "Michael Chen",
+    quote:
+      "As a nursing director, finding qualified staff quickly used to be a constant challenge. LocumNurse has streamlined our staffing process and connected us with high-quality nurses who fit our culture.",
+    name: "Michael Olusegun",
     role: "Director of Nursing",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
+    image: Testimonial2,
   },
   {
-    quote: "The flexibility LocumNurse offers has allowed me to continue my education while maintaining income. I can pick up shifts that work with my schedule and the pay is consistently better than traditional staffing agencies.",
-    name: "Jasmine Davis, BSN",
+    quote:
+      "The flexibility LocumNurse offers has allowed me to continue my education while maintaining income. I can pick up shifts that work with my schedule and the pay is consistently better than traditional staffing agencies.",
+    name: "Idahosa Davis, BSN",
     role: "ER Nurse",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
+    image: Testimonial3,
   },
   {
-    quote: "Our rural hospital struggled to maintain adequate staffing. LocumNurse has been a game-changer, connecting us with dedicated professionals who provide excellent care to our community.",
-    name: "Robert Thompson",
+    quote:
+      "Our rural hospital struggled to maintain adequate staffing. LocumNurse has been a game-changer, connecting us with dedicated professionals who provide excellent care to our community.",
+    name: "Mariam Mustapha",
     role: "Hospital Administrator",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200&q=80"
-  }
+    image: Testimonial4,
+  },
 ];
 
 const Testimonials = () => {
@@ -82,7 +88,7 @@ const Testimonials = () => {
           </CarouselContent>
           <div className="flex justify-center mt-8">
             <CarouselPrevious className="relative mr-2" />
-            <CarouselNext className="relative  ml-2" />
+            <CarouselNext className="relative ml-2" />
           </div>
         </Carousel>
       </div>
