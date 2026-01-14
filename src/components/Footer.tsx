@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -75,8 +76,8 @@ const Footer = () => {
               &copy; {year} LocumNurse. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
-              <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+              <Link to="/privacy" className="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/terms" className="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</Link>
               <a href="#" className="text-sm text-gray-400 hover:text-white transition-colors">Cookies</a>
             </div>
           </div>
